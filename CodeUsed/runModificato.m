@@ -17,7 +17,7 @@
 
 
 divisori = [];
-random = 59;
+random = 59; % Questo valore sarebbe l'intervallo
 
 default = [0:random];
 throttle_random = [0;double(uint8((100)*rand(random,1)))];
@@ -139,18 +139,18 @@ end
 writematrix(["Tempo", "Throttle_Random_Iniziale", "Throttle_ControEsempio"], "test_result"+j+".csv", "Delimiter", ",");
 writematrix(cat(2, cat(2, rot90(default, 3), throttle_random), soluzioni_Throttle), "test_result"+j+".csv", "Delimiter", ",", "WriteMode", "append");
 
-if(isfile("TabellaRisultatiTest0.csv")) 
-	writematrix([random+1, maxRPM_iniziale, maxV_iniziale, ent_viol, maxRPM_finale, maxV_finale, ent_viol_opt], "TabellaRisultatiTest0.csv", "Delimiter", ",", "WriteMode", "append");
+if(isfile("TabellaRisultatiTest.csv")) 
+	writematrix([random+1, maxRPM_iniziale, maxV_iniziale, ent_viol, maxRPM_finale, maxV_finale, ent_viol_opt], "TabellaRisultatiTest.csv", "Delimiter", ",", "WriteMode", "append");
 else
-	writematrix(["Intervallo_Temporale_utilizzato", "EngineRPM_Massimo_Con_Random_Input", "Velocita_Massima_Con_Random_Input", "Entita_Violazione_Con_Random_Input (%)", "EngineRPM_Massimo_ControEsempio", "Velocita_Massima_ControEsempio", "Entita_Violazione_ControEsempio (%)"], "TabellaRisultatiTest0.csv");
-	writematrix([random+1, maxRPM_iniziale, maxV_iniziale, ent_viol, maxRPM_finale, maxV_finale, ent_viol_opt], "TabellaRisultatiTest0.csv", "Delimiter", ",", "WriteMode", "append");
+	writematrix(["Intervallo_Temporale_utilizzato", "EngineRPM_Massimo_Con_Random_Input", "Velocita_Massima_Con_Random_Input", "Entita_Violazione_Con_Random_Input (%)", "EngineRPM_Massimo_ControEsempio", "Velocita_Massima_ControEsempio", "Entita_Violazione_ControEsempio (%)"], "TabellaRisultatiTest.csv");
+	writematrix([random+1, maxRPM_iniziale, maxV_iniziale, ent_viol, maxRPM_finale, maxV_finale, ent_viol_opt], "TabellaRisultatiTest.csv", "Delimiter", ",", "WriteMode", "append");
 end
 
-if(isfile("TabellaTempiRAMTest0.csv"))
-	writematrix([j, tempoCPUin, tempoCPUout, tempoWALL, output, bbval], "TabellaTempiRAMTest0.csv", "Delimiter", ",", "WriteMode", "append");
+if(isfile("TabellaTempiRAMTest.csv"))
+	writematrix([j, tempoCPUin, tempoCPUout, tempoWALL, output, bbval], "TabellaTempiRAMTest.csv", "Delimiter", ",", "WriteMode", "append");
 else
-	writematrix(["N° Test", "Tempo_Di_CPU_Con_Random_Input", "Tempo_Di_CPU_ControEsempio", "Tempo_Di_Esecuzione_Nomad_Intero_ControEsempio", "RAM_Utilizzata_da_MATLAB_per_il_processo (KB)", "Prove_Totali_Svolte_Da_Nomad"], "TabellaTempiRAMTest0.csv");
-	writematrix([j, tempoCPUin, tempoCPUout, tempoWALL, output, bbval], "TabellaTempiRAMTest0.csv", "Delimiter", ",", "WriteMode", "append");
+	writematrix(["N° Test", "Tempo_Di_CPU_Con_Random_Input", "Tempo_Di_CPU_ControEsempio", "Tempo_Di_Esecuzione_Nomad_Intero_ControEsempio", "RAM_Utilizzata_da_MATLAB_per_il_processo (KB)", "Prove_Totali_Svolte_Da_Nomad"], "TabellaTempiRAMTest.csv");
+	writematrix([j, tempoCPUin, tempoCPUout, tempoWALL, output, bbval], "TabellaTempiRAMTest.csv", "Delimiter", ",", "WriteMode", "append");
 end
 
 clear;
