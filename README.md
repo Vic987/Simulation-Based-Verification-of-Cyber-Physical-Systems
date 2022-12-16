@@ -4,6 +4,6 @@ This project was my internship report valid for my bachelor's degree in computer
 
 # Main Goal
 
-  1. Understand the importance of simulating;
+  1. Understand the importance of simulation;
   2. Why finding counter examples are a must thing to do in verifying a system;
   3. Why Nomad is a great tool for blackbox systems. 
