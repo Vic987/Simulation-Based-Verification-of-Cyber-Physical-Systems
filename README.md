@@ -1,6 +1,6 @@
 # Simulation-Based-Verification-of-Cyber-Physical-Systems
 
-This project was my internship report valid for my bachelor's degree in computer science.
+This project was my internship report valid for my bachelor's degree in Computer Science.
 
 # Main Goal
 
